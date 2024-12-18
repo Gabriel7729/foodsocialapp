@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:socialfoodapp/components/card1.dart';
 import 'package:socialfoodapp/models/explore_recipe.dart';
+import 'package:socialfoodapp/components/post_cards.dart';
 
 import '../models/post.dart';
 import 'card2.dart';
@@ -19,7 +20,6 @@ class FriendPostListView extends StatelessWidget {
           style: Theme.of(context).textTheme.displayLarge,
         ),
         Container(
-          height: 400,
           color: Colors.transparent,
           child: ListView.separated(
             itemCount: friendPosts.length,
@@ -28,7 +28,7 @@ class FriendPostListView extends StatelessWidget {
             primary: false,
             itemBuilder: (context, index) {
               final friendPost = friendPosts[index];
-              return Text("Hola");
+              return PostCards(post: friendPost,);
             },
             separatorBuilder: (context, index) {
               return SizedBox(width: 16,);
